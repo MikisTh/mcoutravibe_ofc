@@ -25,34 +25,27 @@
     }
 
     header{
-      position:relative;
-    
-      padding:120px 20px;
-      text-align:center;
-      color:white;
-    
-      /* IMAGEM */
-      background:
-      linear-gradient(
-        rgba(0,0,0,0.70),
-        rgba(0,0,0,0.70)
-      ),
-      url("./img/foto01.png");
-    
-      background-size:cover;
-      background-position:center;
-      background-repeat:no-repeat;
-      background-attachment:fixed;
-    
-      overflow:hidden;
-    }
-    
-    /* GARANTE QUE TEXTO FIQUE NA FRENTE */
-    header *{
-      position:relative;
-      z-index:2;
-    }
+  padding:40px 20px;
 
+  /* BACKGROUND ANTIGO REMOVIDO */
+  background:
+  linear-gradient(
+    rgba(0,0,0,0.70),
+    rgba(0,0,0,0.70)
+  ),
+  url("./img/background-header.jpg");
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+
+  border-bottom:2px solid #ff0055;
+  text-align:center;
+
+  position:relative;
+  overflow:hidden;
+}
 
     body{
       background:#0b0b0b;
@@ -133,25 +126,52 @@
 
 
     /* ===== HEADER ===== */
+header{
+  padding:40px 20px;
 
-    header{
-      padding:40px 20px;
-      background:#111;
-      border-bottom:2px solid #ff0055;
-      text-align:center;
-    }
+  /* IMAGEM + ESCURECIMENTO */
+  background:
+  linear-gradient(
+    rgba(0,0,0,0.70),
+    rgba(0,0,0,0.70)
+  ),
+  url("./img/background-header.jpg");
 
-    header h1{
-      font-size:55px;
-      color:#ff0055;
-      margin-bottom:10px;
-    }
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
 
-    .descricao{
-      font-size:18px;
-      color:#ddd;
-      margin-bottom:25px;
-    }
+  border-bottom:2px solid #ff0055;
+  text-align:center;
+
+  position:relative;
+  overflow:hidden;
+}
+
+header h1{
+  font-size:55px;
+  color:#ff0055;
+  margin-bottom:10px;
+
+  position:relative;
+  z-index:2;
+}
+
+.descricao{
+  font-size:18px;
+  color:#ddd;
+  margin-bottom:25px;
+
+  position:relative;
+  z-index:2;
+}
+
+/* REDES SOCIAIS */
+.social-links{
+  position:relative;
+  z-index:2;
+}
 
     /* ===== INFO ===== */
 
