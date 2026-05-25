@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <title>MC Outra Vibe | Oficial</title>
@@ -7,7 +8,7 @@
 
   <!-- ÍCONES -->
   <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
 
@@ -18,79 +19,50 @@
       font-family:Arial, Helvetica, sans-serif;
     }
 
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       background:#0b0b0b;
-      color:white;
+      color:#fff;
       overflow-x:hidden;
     }
 
-          /* ===== NAV MODERNO ===== */
-      
-      nav{
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        gap:18px;
-        margin-top:40px;
-        flex-wrap:wrap;
-        padding:18px;
-        background:rgba(255,255,255,0.03);
-        border:1px solid rgba(255,255,255,0.05);
-        border-radius:20px;
-        backdrop-filter:blur(10px);
-        max-width:700px;
-        margin-left:auto;
-        margin-right:auto;
-        box-shadow:0 10px 30px rgba(0,0,0,.25);
-      }
-      
-      nav button{
-        position:relative;
-        overflow:hidden;
-        padding:15px 28px;
-        border:none;
-        border-radius:14px;
-        background:#1a1a1a;
-        color:#fff;
-        font-weight:bold;
-        font-size:15px;
-        letter-spacing:.5px;
-        cursor:pointer;
-        transition:.35s;
-        border:1px solid rgba(255,255,255,.06);
-      }
-      
-      nav button::before{
-        content:'';
-        position:absolute;
-        top:0;
-        left:-100%;
-        width:100%;
-        height:100%;
-        background:linear-gradient(
-          90deg,
-          transparent,
-          rgba(255,255,255,.15),
-          transparent
-        );
-        transition:.6s;
-      }
-      
-      nav button:hover::before{
-        left:100%;
-      }
-      
-      nav button:hover{
-        transform:translateY(-4px) scale(1.03);
-        background:linear-gradient(45deg,#ff0055,#ff3380);
-        box-shadow:0 10px 25px rgba(255,0,85,.35);
-      }
-      
-      nav button:active{
-        transform:scale(.97);
-      }
+    /* ===== NAV ===== */
 
-    /* HEADER */
+    nav{
+      position:sticky;
+      top:0;
+      z-index:999;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:15px;
+      flex-wrap:wrap;
+      padding:18px;
+      background:rgba(10,10,10,.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.05);
+    }
+
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      padding:12px 22px;
+      border-radius:12px;
+      background:#1a1a1a;
+      transition:.3s;
+      font-weight:bold;
+    }
+
+    nav a:hover{
+      background:linear-gradient(45deg,#ff0055,#ff3380);
+      transform:translateY(-3px);
+      box-shadow:0 8px 20px rgba(255,0,85,.3);
+    }
+
+    /* ===== HEADER ===== */
 
     header{
       padding:40px 20px;
@@ -111,6 +83,8 @@
       margin-bottom:25px;
     }
 
+    /* ===== INFO ===== */
+
     .canal-info{
       display:flex;
       justify-content:center;
@@ -130,14 +104,14 @@
       color:#ff3380;
     }
 
-    /* REDES */
+    /* ===== REDES ===== */
 
     .social-links{
       display:flex;
       justify-content:center;
       gap:15px;
       flex-wrap:wrap;
-      margin-bottom:20px;
+      margin-bottom:30px;
     }
 
     .social-links a{
@@ -148,7 +122,7 @@
       justify-content:center;
       border-radius:50%;
       background:#1d1d1d;
-      color:white;
+      color:#fff;
       font-size:22px;
       text-decoration:none;
       transition:.3s;
@@ -160,15 +134,89 @@
       box-shadow:0 10px 20px rgba(255,0,85,.4);
     }
 
-    /* STREAMING */
+    /* ===== CARROSSEL ===== */
+
+    .carrossel-container{
+      position:relative;
+      width:100%;
+      max-width:1000px;
+      margin:40px auto 0;
+      overflow:hidden;
+      border-radius:20px;
+      box-shadow:0 0 30px rgba(255,0,85,.15);
+    }
+
+    .carrossel{
+      display:flex;
+      transition:transform .5s ease-in-out;
+    }
+
+    .carrossel img{
+      width:100%;
+      height:500px;
+      flex-shrink:0;
+      object-fit:contain;
+      background:#081521;
+      padding:10px;
+    }
+
+    .btn-carrossel{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:50px;
+      height:50px;
+      border:none;
+      border-radius:50%;
+      background:rgba(0,0,0,.5);
+      color:#fff;
+      font-size:28px;
+      cursor:pointer;
+      z-index:10;
+      transition:.3s;
+    }
+
+    .btn-carrossel:hover{
+      background:#ff0055;
+    }
+
+    .prev{
+      left:15px;
+    }
+
+    .next{
+      right:15px;
+    }
+
+    .indicadores{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      margin-top:15px;
+    }
+
+    .indicador{
+      width:12px;
+      height:12px;
+      border-radius:50%;
+      background:#555;
+      cursor:pointer;
+    }
+
+    .indicador.ativo{
+      background:#ff0055;
+    }
+
+    /* ===== STREAMING ===== */
 
     .streaming{
-      margin-top:25px;
+      margin-top:60px;
     }
 
     .streaming h2{
       margin-bottom:20px;
       color:#ff3380;
+      text-align:center;
     }
 
     .stream-grid{
@@ -184,7 +232,7 @@
       padding:20px;
       border-radius:18px;
       text-decoration:none;
-      color:white;
+      color:#fff;
       transition:.3s;
       border:1px solid rgba(255,255,255,.05);
     }
@@ -200,36 +248,7 @@
       color:#ff0055;
     }
 
-    .stream-card h3{
-      margin-bottom:10px;
-    }
-
-    /* MENU */
-
-    nav{
-      display:flex;
-      justify-content:center;
-      gap:15px;
-      margin-top:35px;
-      flex-wrap:wrap;
-    }
-
-    nav button{
-      padding:14px 25px;
-      border:none;
-      border-radius:12px;
-      background:#ff0055;
-      color:white;
-      font-weight:bold;
-      cursor:pointer;
-      transition:.3s;
-    }
-
-    nav button:hover{
-      transform:scale(1.05);
-    }
-
-    /* MAIN */
+    /* ===== MAIN ===== */
 
     main{
       padding:50px 20px;
@@ -237,29 +256,18 @@
       margin:auto;
     }
 
-    .pagina{
-      display:none;
-    }
-
-    .pagina.ativa{
-      display:block;
-    }
-
     h2{
       margin-bottom:30px;
       color:#ff3380;
       font-size:35px;
+      text-align:center;
     }
-
-    /* GRID */
 
     .media-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
       gap:30px;
     }
-
-    /* CARD */
 
     .media-card{
       background:#151515;
@@ -290,13 +298,6 @@
       font-size:24px;
     }
 
-    audio,
-    video{
-      width:100%;
-      margin-bottom:15px;
-      border-radius:12px;
-    }
-
     .btn-media{
       display:block;
       width:100%;
@@ -322,114 +323,66 @@
       border-top:2px solid #ff0055;
     }
 
+    /* ===== RESPONSIVO ===== */
+
     @media(max-width:768px){
 
       header h1{
         font-size:38px;
       }
 
+      .carrossel img{
+        height:260px;
+      }
+
       .media-grid{
         grid-template-columns:1fr;
       }
 
+      nav{
+        gap:10px;
+      }
+
+      nav a{
+        width:100%;
+        text-align:center;
+      }
+
     }
-
-    /* ===== CARROSSEL ===== */
-
-.carrossel-container{
-  position:relative;
-  width:100%;
-  max-width:1000px;
-  margin:50px auto 0;
-  overflow:hidden;
-  border-radius:20px;
-  box-shadow:0 0 30px rgba(77,166,255,0.15);
-}
-
-.carrossel{
-  display:flex;
-  transition:transform 0.5s ease-in-out;
-}
-
-.carrossel img{
-  width:100%;
-  height:500px;
-  flex-shrink:0;
-  object-fit:contain;
-  background:#081521;
-  padding:10px;
-}
-
-.btn-carrossel{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  background:rgba(0,0,0,0.5);
-  color:#fff;
-  border:none;
-  font-size:28px;
-  width:50px;
-  height:50px;
-  cursor:pointer;
-  border-radius:50%;
-  z-index:10;
-  transition:0.3s;
-}
-
-.btn-carrossel:hover{
-  background:#4da6ff;
-}
-
-.prev{
-  left:15px;
-}
-
-.next{
-  right:15px;
-}
-
-.indicadores{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-top:15px;
-}
-
-.indicador{
-  width:12px;
-  height:12px;
-  border-radius:50%;
-  background:#5f6b7a;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.indicador.ativo{
-  background:#4da6ff;
-}
-
-@media(max-width:768px){
-
-  .carrossel img{
-    height:260px;
-  }
-
-}
 
   </style>
 </head>
 
 <body>
-  
- 
-<header>
 
-  <h1>🎵 MC Outra Vibe</h1>
+  <!-- NAV -->
 
-  <p class="descricao">
-    Abriram o Manicômio! É O Mais Louco da Cidade!!
-  </p>
+  <nav>
+    <a href="#galeria">Galeria</a>
+    <a href="#musicas">Músicas</a>
+    <a href="#videos">Vídeos</a>
+    <a href="#streaming">Streaming</a>
+    <a href="#contato">Contato</a>
+  </nav>
 
+  <!-- HEADER -->
+
+  <header>
+
+    <h1>🎵 MC Outra Vibe</h1>
+
+    <p class="descricao">
+      Abriram o Manicômio! É O Mais Louco da Cidade!!
+    </p>
+
+    <!-- restante do seu conteúdo -->
+
+  </header>
+
+  <!-- MAIN -->
+
+  <main>
+   
   <div class="canal-info">
 
     <div class="info-box">
@@ -776,9 +729,10 @@
   <!-- VIDEOS -->
 
   <section id="videos" class="pagina">
-    <h2>🎬 YoutubeMusic</h2
+    <h2>🎬 YoutubeMusic</h2>
                            
     <div class="media-grid">
+
       <div class="media-card">
         <img src="./img/img10.jpeg">
         <div class="media-info">
@@ -791,6 +745,7 @@
         </div>
       </div>
 
+
       <div class="media-card">
         <img src="./img/img02.jpeg">
         <div class="media-info">
@@ -802,6 +757,7 @@
           </a>
         </div>
       </div>
+
 
       <div class="media-card">
         <img src="./img/img14.jpeg">
@@ -838,91 +794,98 @@
           </a>
         </div>
       </div>
-      
+
     </div>
+    </div>
+
+
   </section>
 
- </main>
 
+  </main>
 
+  <!-- FOOTER -->
 
-<footer>
+  <footer id="contato">
+    <p>
+      © 2026 MC Outra Vibe — Todos os direitos reservados
+    </p>
+  </footer>
 
-  <p>
-    © 2026 MC Outra Vibe — Todos os direitos reservados
-  </p>
+  <script>
 
-</footer>
+    const carrossel = document.querySelector('.carrossel');
+    const imagens = document.querySelectorAll('.carrossel img');
+    const btnPrev = document.querySelector('.prev');
+    const btnNext = document.querySelector('.next');
+    const indicadores = document.querySelectorAll('.indicador');
 
+    let index = 0;
 
+    function atualizarCarrossel(){
 
-<script>
+      carrossel.style.transform =
+        `translateX(-${index * 100}%)`;
 
-  const botoes = document.querySelectorAll("nav button");
-  const paginas = document.querySelectorAll(".pagina");
-  const carrossel = document.querySelector('.carrossel');
-  const imagens = document.querySelectorAll('.carrossel img');
-  const btnPrev = document.querySelector('.prev');
-  const btnNext = document.querySelector('.next');
-  const indicadores = document.querySelectorAll('.indicador');
+      indicadores.forEach(ind =>
+        ind.classList.remove('ativo')
+      );
 
+      if(indicadores[index]){
+        indicadores[index].classList.add('ativo');
+      }
 
-     botoes.forEach(btn => {
+    }
 
-    btn.addEventListener("click", () => {
+    btnNext.addEventListener('click', ()=>{
 
-      paginas.forEach(pagina => {
-        pagina.classList.remove("ativa");
-      });
+      index++;
 
-      document
-        .getElementById(btn.dataset.page)
-        .classList.add("ativa");
+      if(index >= imagens.length){
+        index = 0;
+      }
+
+      atualizarCarrossel();
 
     });
 
-  });
-    
+    btnPrev.addEventListener('click', ()=>{
 
-let index = 0;
+      index--;
 
-function atualizarCarrossel(){
-  carrossel.style.transform =
-    `translateX(-${index * 100}%)`;
-  indicadores.forEach(ind => ind.classList.remove('ativo'));
-  indicadores[index].classList.add('ativo');
-}
-btnNext.addEventListener('click', ()=>{
+      if(index < 0){
+        index = imagens.length - 1;
+      }
 
-  index++;
-  if(index >= imagens.length){
-    index = 0;
-  }
-  atualizarCarrossel();
-});
-btnPrev.addEventListener('click', ()=>{
+      atualizarCarrossel();
 
-  index--;
-  if(index < 0){
-    index = imagens.length - 1;
-  }
-  atualizarCarrossel();
-});
-indicadores.forEach((item, i)=>{
-  item.addEventListener('click', ()=>{
-    index = i;
-    atualizarCarrossel();
-  });
-});
+    });
 
-/* AUTO PLAY */
-setInterval(()=>{
-  index++;
-  if(index >= imagens.length){
-    index = 0;
-  }
-  atualizarCarrossel();
-}, 5000);
-</script>
+    indicadores.forEach((item, i)=>{
+
+      item.addEventListener('click', ()=>{
+
+        index = i;
+
+        atualizarCarrossel();
+
+      });
+
+    });
+
+    setInterval(()=>{
+
+      index++;
+
+      if(index >= imagens.length){
+        index = 0;
+      }
+
+      atualizarCarrossel();
+
+    }, 5000);
+
+  </script>
+
 </body>
 </html>
