@@ -10,13 +10,7 @@
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- PLAYER AUTOMÁTICO -->
-
-<audio id="musica" autoplay loop>
-  <source src="./music/music02.mp3" type="audio/mpeg">
-</audio>
-
-  <style>
+   <style>
 
     *{
       margin:0;
@@ -723,6 +717,10 @@ header h1{
     
     .fa-discord{
       color:#5865F2;
+    }
+
+     audio{
+      display:none;
     }
     
     /* ===== RESPONSIVO ===== */
@@ -1451,6 +1449,13 @@ header h1{
 
     </div>
 
+ <!-- PLAYER AUTOMÁTICO -->
+
+<audio id="musica" autoplay loop>
+  <source src="./music/music02.mp3" type="audio/mpeg">
+</audio>
+
+  
   </main>
 
   <!-- FOOTER -->
@@ -1669,18 +1674,40 @@ document
 });
 
                            
-  const musica = document.getElementById("musica");
+ <script>
 
-  // tenta tocar automaticamente
-  musica.volume = 0.5;
+const musica = document.getElementById("musica");
 
-  const iniciarAudio = () => {
-    musica.play();
-    
-    document.removeEventListener("click", iniciarAudio);
-  };
+/* volume */
+musica.volume = 0.5;
 
-  document.addEventListener("click", iniciarAudio);
+/* autoplay automático */
+window.addEventListener("load", async () => {
+
+  try{
+
+    await musica.play();
+
+  } catch(err){
+
+    console.log("Autoplay bloqueado");
+
+  }
+
+});
+
+/* toca no primeiro toque/clique */
+function ativarAudio(){
+
+  musica.play();
+
+  document.removeEventListener("click", ativarAudio);
+  document.removeEventListener("touchstart", ativarAudio);
+
+}
+
+document.addEventListener("click", ativarAudio);
+document.addEventListener("touchstart", ativarAudio);
 
 
   </script>
