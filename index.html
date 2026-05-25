@@ -24,6 +24,34 @@
       scroll-behavior:smooth;
     }
 
+   header{
+  position:relative;
+  overflow:hidden;
+
+  padding:80px 20px;
+  text-align:center;
+  color:white;
+
+  background:url("./img/foto03.png") center/cover no-repeat;
+}
+
+/* CAMADA ESCURA/TRANSPARENTE */
+header::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:rgba(0,0,0,0.65);
+
+  z-index:0;
+}
+
+/* CONTEÚDO FICA NA FRENTE */
+header *{
+  position:relative;
+  z-index:1;
+}
+
     body{
       background:#0b0b0b;
       color:#fff;
