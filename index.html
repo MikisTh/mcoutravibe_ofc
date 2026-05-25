@@ -24,6 +24,72 @@
       overflow-x:hidden;
     }
 
+          /* ===== NAV MODERNO ===== */
+      
+      nav{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:18px;
+        margin-top:40px;
+        flex-wrap:wrap;
+        padding:18px;
+        background:rgba(255,255,255,0.03);
+        border:1px solid rgba(255,255,255,0.05);
+        border-radius:20px;
+        backdrop-filter:blur(10px);
+        max-width:700px;
+        margin-left:auto;
+        margin-right:auto;
+        box-shadow:0 10px 30px rgba(0,0,0,.25);
+      }
+      
+      nav button{
+        position:relative;
+        overflow:hidden;
+        padding:15px 28px;
+        border:none;
+        border-radius:14px;
+        background:#1a1a1a;
+        color:#fff;
+        font-weight:bold;
+        font-size:15px;
+        letter-spacing:.5px;
+        cursor:pointer;
+        transition:.35s;
+        border:1px solid rgba(255,255,255,.06);
+      }
+      
+      nav button::before{
+        content:'';
+        position:absolute;
+        top:0;
+        left:-100%;
+        width:100%;
+        height:100%;
+        background:linear-gradient(
+          90deg,
+          transparent,
+          rgba(255,255,255,.15),
+          transparent
+        );
+        transition:.6s;
+      }
+      
+      nav button:hover::before{
+        left:100%;
+      }
+      
+      nav button:hover{
+        transform:translateY(-4px) scale(1.03);
+        background:linear-gradient(45deg,#ff0055,#ff3380);
+        box-shadow:0 10px 25px rgba(255,0,85,.35);
+      }
+      
+      nav button:active{
+        transform:scale(.97);
+      }
+
     /* HEADER */
 
     header{
@@ -354,7 +420,26 @@
 </head>
 
 <body>
+  
+<nav>
 
+  <button data-page="musicas">
+    <i class="fas fa-headphones"></i>
+    🎧 Músicas
+  </button>
+
+  <button data-page="videos">
+    <i class="fas fa-video"></i>
+    🎬 Vídeos
+  </button>
+
+  <button onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+    Topo
+  </button>
+
+</nav>
+  
 <header>
 
   <h1>🎵 MC Outra Vibe</h1>
