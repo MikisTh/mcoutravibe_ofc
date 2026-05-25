@@ -24,34 +24,21 @@
       scroll-behavior:smooth;
     }
 
-   header{
-  position:relative;
-  overflow:hidden;
-
-  padding:80px 20px;
-  text-align:center;
-  color:white;
-
-  background:url("./img/foto03.png") center/cover no-repeat;
-}
-
+   
 /* CAMADA ESCURA/TRANSPARENTE */
 header::before{
-  content:"";
-  position:absolute;
-  inset:0;
+      content:"";
+      position:fixed;
+      inset:0;
+    
+      background:url("./img/foto01.png") center/cover no-repeat;
+    
+      opacity:0.25;
+      filter:blur(3px);
+    
+      z-index:-1;
+    }
 
-  background:rgba(0,0,0,0.45);
-  backdrop-filter:blur(4px);
-
-  z-index:0;
-}
-
-/* CONTEÚDO FICA NA FRENTE */
-header *{
-  position:relative;
-  z-index:1;
-}
 
     body{
       background:#0b0b0b;
