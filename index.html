@@ -740,7 +740,17 @@ header h1{
     }
 
     @media(max-width:600px){
-
+    .pagina{
+      display:none;
+    }
+    
+    .pagina.ativa{
+      display:block;
+    }
+    
+    .nav-link.ativo{
+      color:#1db954;
+    }
     .nav-links{
         gap:10px;
     }
@@ -872,14 +882,19 @@ header h1{
      MC Outra Vibe
   </div>
   
-  <div class="nav-links">
-    <a href="#inicio">Início</a>
-    <a href="#galeria">Galeria</a>
-    <a href="#plataformas">Plataformas</a>
-    <a href="#musicas">Músicas</a>
-    <a href="#videos">Vídeos</a>
-    <a href="#contato">Contato</a>
-  </div>
+ <nav class="menu">
+
+  <a href="#home" class="nav-link ativo">Home</a>
+
+  <a href="#videos" class="nav-link">Vídeos</a>
+
+  <a href="#musicas" class="nav-link">YouTube</a>
+
+  <a href="#spotify" class="nav-link">Spotify</a>
+
+  <a href="#applemusic" class="nav-link">Apple Music</a>
+
+  <a href="#contato" class="nav-link">Contato</a>
 
 </nav>
 
@@ -887,6 +902,8 @@ header h1{
 
   <header>
 
+    <section id="home" class="pagina ativa">
+      
     <h1>🎵 MC Outra Vibe</h1>
 
     <p class="descricao">
@@ -926,7 +943,7 @@ header h1{
 
   <main>
    
-  <section id="galeria">
+  <section id="galeria" class="pagina">
 
   <h2 class="title"> </h2>
 
@@ -1010,7 +1027,7 @@ header h1{
   
   <!-- STREAMINGS -->
 
-  <div class="streaming">
+  <div class="streaming" class="pagina">
 
     <h2>🔥 Ouça nas Plataformas</h2>
 
@@ -1067,7 +1084,7 @@ header h1{
 
 <!-- YOUTUBE MUSIC -->
 
-<section id="musicas" class="pagina ativa">
+<section id="musicas" class="pagina">
 
   <h2>🎧 Músicas</h2>
 
@@ -1257,7 +1274,7 @@ header h1{
 </section>
  <!-- SPOTIFY -->
 
-<section id="spotify" class="pagina ativa">
+<section id="spotify" class="pagina">
 
   <h2 class="video-title spotify-title">
     <i class="fab fa-spotify"></i>
@@ -1424,7 +1441,7 @@ header h1{
   
 <!-- APPLE MUSIC -->
 
-<section id="applemusic" class="pagina ativa">
+<section id="applemusic" class="pagina">
 
   <h2 class="video-title apple-title">
     <i class="fab fa-apple"></i>
@@ -1750,7 +1767,7 @@ header h1{
 
   <!-- FOOTER -->
 
-  <footer id="contato">
+  <footer id="contato" class="pagina">
     <div class="social-links">
 
     <a href="https://www.youtube.com/@mcoutravibe_ofc" target="_blank">
