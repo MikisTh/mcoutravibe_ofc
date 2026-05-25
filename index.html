@@ -801,18 +801,65 @@ header h1{
       box-shadow:0 20px 40px rgba(29,185,84,.25);
     }
 
-    .apple-frame{
-  padding:12px;
-  background:#111;
-  border-radius:22px;
+   /* ===== CARROSSEL APPLE MUSIC ===== */
+
+#appleCarousel{
+  display:flex;
+  gap:20px;
+  align-items:stretch;
+  transition:transform .5s ease;
+}
+
+#appleCarousel .stream-item{
+  min-width:320px;
+  max-width:320px;
+  flex:0 0 320px;
+  display:flex;
+}
+
+.apple-frame{
+  width:100%;
+  padding:0;
   overflow:hidden;
+  border-radius:18px;
+  background:#111;
+  display:flex;
+  align-items:stretch;
 }
 
 .apple-frame iframe{
-  border:none;
   width:100%;
   height:450px;
+  border:none;
+  display:block;
   border-radius:18px;
+}
+
+/* CONTAINER */
+
+.stream-carousel-container{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  padding:10px 50px;
+  box-sizing:border-box;
+}
+
+/* BOTÕES */
+
+.stream-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:10;
+}
+
+.stream-prev{
+  left:0;
+}
+
+.stream-next{
+  right:0;
 }
 
   </style>
