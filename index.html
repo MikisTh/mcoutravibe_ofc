@@ -29,38 +29,56 @@
       overflow-x:hidden;
     }
 
-    /* ===== NAV ===== */
+    /* ===== NAVBAR ===== */
 
-    nav{
-      position:sticky;
-      top:0;
-      z-index:999;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:15px;
-      flex-wrap:wrap;
-      padding:18px;
-      background:rgba(10,10,10,.92);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(255,255,255,.05);
+    .navbar{
+    position:sticky;
+    top:0;
+    z-index:999;
+    width:100%;
+    background:rgba(10,10,10,0.95);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 40px;
     }
 
-    nav a{
-      color:#fff;
-      text-decoration:none;
-      padding:12px 22px;
-      border-radius:12px;
-      background:#1a1a1a;
-      transition:.3s;
-      font-weight:bold;
+    .logo{
+    font-size:22px;
+    font-weight:bold;
+    color:#ff0055;
     }
 
-    nav a:hover{
-      background:linear-gradient(45deg,#ff0055,#ff3380);
-      transform:translateY(-3px);
-      box-shadow:0 8px 20px rgba(255,0,85,.3);
+    .nav-links{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
     }
+
+    .nav-links a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    padding:10px 18px;
+    border-radius:12px;
+    transition:.3s;
+    }
+
+    .nav-links a:hover{
+    background:#ff0055;
+    transform:translateY(-2px);
+    }
+
+    /* ===== SCROLL SUAVE ===== */
+
+    html{
+    scroll-behavior:smooth;
+    }
+
 
     /* ===== HEADER ===== */
 
@@ -323,30 +341,33 @@
       border-top:2px solid #ff0055;
     }
 
+    
     /* ===== RESPONSIVO ===== */
 
-    @media(max-width:768px){
+    @media(max-width:900px){
 
-      header h1{
-        font-size:38px;
-      }
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+        padding:20px;
+    }
 
-      .carrossel img{
-        height:260px;
-      }
+    .nav-links{
+        justify-content:center;
+    }
 
-      .media-grid{
-        grid-template-columns:1fr;
-      }
+    }
 
-      nav{
+    @media(max-width:600px){
+
+    .nav-links{
         gap:10px;
-      }
+    }
 
-      nav a{
-        width:100%;
-        text-align:center;
-      }
+    .nav-links a{
+        font-size:14px;
+        padding:8px 14px;
+    }
 
     }
 
@@ -354,16 +375,22 @@
 </head>
 
 <body>
-
-  <!-- NAV -->
-
-  <nav>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">
+    🎵 MC Outra Vibe
+  </div>
+  
+  <div class="nav-links">
+    <a href="#inicio">Início</a>
     <a href="#galeria">Galeria</a>
+    <a href="#plataformas">Plataformas</a>
     <a href="#musicas">Músicas</a>
     <a href="#videos">Vídeos</a>
-    <a href="#streaming">Streaming</a>
     <a href="#contato">Contato</a>
-  </nav>
+  </div>
+
+</nav>
 
   <!-- HEADER -->
 
@@ -428,7 +455,7 @@
 
  <section id="Galeria">
 
-  <h2 class="title"> Imagens e Fotos</h2>
+  <h2 class="title"> </h2>
 
   <div class="carrossel-container">
 
