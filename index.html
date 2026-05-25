@@ -30,6 +30,27 @@
       overflow-x:hidden;
     }
 
+        body{
+      margin:0;
+      min-height:100vh;
+      position:relative;
+      color:white;
+      overflow-x:hidden;
+    }
+    
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+    
+      background:url("./img/foto02.png") center/cover no-repeat;
+    
+      opacity:0.25;
+      filter:blur(3px);
+    
+      z-index:-1;
+    }
+
     /* ===== NAVBAR ===== */
 
     .navbar{
