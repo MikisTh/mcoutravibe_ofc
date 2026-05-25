@@ -791,7 +791,6 @@
         </div>
       </div>
 
-
       <div class="media-card">
         <img src="./img/img02.jpeg">
         <div class="media-info">
@@ -803,7 +802,6 @@
           </a>
         </div>
       </div>
-
 
       <div class="media-card">
         <img src="./img/img14.jpeg">
@@ -840,16 +838,11 @@
           </a>
         </div>
       </div>
-
       
-
     </div>
-
   </section>
 
- 
-
-</main>
+ </main>
 
 
 
@@ -894,66 +887,42 @@
 let index = 0;
 
 function atualizarCarrossel(){
-
   carrossel.style.transform =
     `translateX(-${index * 100}%)`;
-
   indicadores.forEach(ind => ind.classList.remove('ativo'));
-
   indicadores[index].classList.add('ativo');
 }
-
 btnNext.addEventListener('click', ()=>{
 
   index++;
-
   if(index >= imagens.length){
     index = 0;
   }
-
   atualizarCarrossel();
-
 });
-
 btnPrev.addEventListener('click', ()=>{
 
   index--;
-
   if(index < 0){
     index = imagens.length - 1;
   }
-
   atualizarCarrossel();
-
 });
-
 indicadores.forEach((item, i)=>{
-
   item.addEventListener('click', ()=>{
-
     index = i;
-
     atualizarCarrossel();
-
   });
-
 });
 
 /* AUTO PLAY */
-
 setInterval(()=>{
-
   index++;
-
   if(index >= imagens.length){
     index = 0;
   }
-
   atualizarCarrossel();
-
 }, 5000);
-
 </script>
-
 </body>
 </html>
