@@ -893,6 +893,34 @@ header h1{
       Abriram o Manicômio! É O Mais Louco da Cidade!!
     </p>
 
+    
+    <iframe
+      width="0"
+      height="0"
+      src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&loop=1&playlist=VIDEO_ID"
+      frameborder="0"
+      allow="autoplay">
+    </iframe>
+
+    <div id="player"></div>
+
+      <script src="https://www.youtube.com/iframe_api"></script>
+      
+      <script>
+      function onYouTubeIframeAPIReady() {
+        new YT.Player('player', {
+          height: '0',
+          width: '0',
+          videoId: 'VIDEO_ID',
+          playerVars: {
+            autoplay: 1,
+            loop: 1,
+            playlist: 'VIDEO_ID'
+          }
+        });
+      }
+      </script>
+    
  <!-- REDES -->
 
     <div class="social-links">
