@@ -893,34 +893,73 @@ header h1{
       Abriram o Manicômio! É O Mais Louco da Cidade!!
     </p>
 
-    
-    <iframe
-      width="0"
-      height="0"
-      src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&loop=1&playlist=VIDEO_ID"
-      frameborder="0"
-      allow="autoplay">
-    </iframe>
 
     <div id="player"></div>
 
-      <script src="https://www.youtube.com/iframe_api"></script>
-      
-      <script>
-      function onYouTubeIframeAPIReady() {
-        new YT.Player('player', {
-          height: '0',
-          width: '0',
-          videoId: 'VIDEO_ID',
-          playerVars: {
-            autoplay: 1,
-            loop: 1,
-            playlist: 'VIDEO_ID'
-          }
-        });
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script>
+
+let player;
+
+function onYouTubeIframeAPIReady() {
+
+  player = new YT.Player('player', {
+
+    height: '0',
+    width: '0',
+
+    videoId: 'wgUAbNDlQGE',
+
+    playerVars: {
+
+      autoplay: 1,
+      controls: 0,
+      showinfo: 0,
+      modestbranding: 1,
+      loop: 1,
+      fs: 0,
+      cc_load_policy: 0,
+      iv_load_policy: 3,
+      autohide: 1,
+      playlist: 'wgUAbNDlQGE'
+
+    },
+
+    events: {
+
+      onReady: function(event){
+
+        event.target.setVolume(40);
+
+        event.target.playVideo();
+
       }
-      </script>
+
+    }
+
+  });
+
+}
+
+/* ativa som após primeiro clique */
+
+document.addEventListener("click", () => {
+
+  if(player){
+
+    player.unMute();
+
+    player.playVideo();
+
+  }
+
+}, { once:true });
+
+</script>
     
+
+       
  <!-- REDES -->
 
     <div class="social-links">
@@ -1766,13 +1805,6 @@ header h1{
 </section>
 
     </div>
-
- <!-- PLAYER AUTOMÁTICO -->
-
-<audio id="musica" autoplay loop>
-  <source src="./music/music02.mp3" type="audio/mpeg">
-</audio>
-
 
   </main>
 
